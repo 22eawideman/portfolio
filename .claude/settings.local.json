@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls /Users/ethanwideman/.claude/projects/-Users-ethanwideman-projects-generativeAI/memory/)",
+      "Read(//Users/ethanwideman/.claude/projects/-Users-ethanwideman-projects-generativeAI/memory/**)",
+      "Read(//Users/ethanwideman/.claude/projects/-Users-ethanwideman-projects-streamlair/memory/**)",
+      "Read(//Users/ethanwideman/.claude/projects/-Users-ethanwideman-projects-streamlair-ai/memory/**)"
+    ]
+  }
+}

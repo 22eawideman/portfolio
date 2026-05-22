@@ -1,0 +1,263 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg: #080808;
+  --surface: #101010;
+  --surface-hover: #141414;
+  --border: #1e1e1e;
+  --border-hover: #2e2e2e;
+  --text: #e2e2e2;
+  --muted: #666;
+  --muted-light: #888;
+  --accent: #5b8dee;
+  --accent-dim: rgba(91, 141, 238, 0.12);
+  --tag-bg: #0e0e0e;
+  --tag-border: #252525;
+  --carousel-bg: #050505;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+.page {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 72px 28px 112px;
+}
+
+/* ── Header ───────────────────────────────────────── */
+
+.site-header {
+  margin-bottom: 80px;
+}
+
+.site-header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  margin-bottom: 8px;
+  background: linear-gradient(135deg, #e8e8e8 0%, #9baec8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.subtitle {
+  color: var(--muted-light);
+  font-size: 0.975rem;
+  margin-bottom: 20px;
+}
+
+.header-links {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  flex-wrap: wrap;
+}
+
+.header-link {
+  color: var(--muted-light);
+  font-size: 0.875rem;
+  text-decoration: none;
+  padding: 4px 0;
+  transition: color 0.15s;
+}
+
+.header-link:hover {
+  color: var(--text);
+}
+
+.resume-link {
+  color: var(--accent);
+}
+
+.resume-link:hover {
+  color: #7aaaf5;
+}
+
+.header-link-divider {
+  display: inline-block;
+  width: 1px;
+  height: 12px;
+  background: var(--border-hover);
+  margin: 0 14px;
+}
+
+/* ── Projects ─────────────────────────────────────── */
+
+.projects {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.project-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  transition: border-color 0.2s;
+}
+
+.project-card:hover {
+  border-color: var(--border-hover);
+}
+
+.project-header {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.project-header h2 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--text);
+}
+
+.project-links {
+  display: flex;
+  gap: 12px;
+}
+
+.project-link {
+  color: var(--accent);
+  font-size: 0.825rem;
+  text-decoration: none;
+  padding: 2px 10px;
+  border: 1px solid rgba(91, 141, 238, 0.25);
+  border-radius: 4px;
+  background: var(--accent-dim);
+  transition: border-color 0.15s, background 0.15s;
+}
+
+.project-link:hover {
+  border-color: rgba(91, 141, 238, 0.55);
+  background: rgba(91, 141, 238, 0.18);
+}
+
+.project-description {
+  color: #a8a8a8;
+  font-size: 0.9rem;
+  line-height: 1.75;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.tech-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.tech-tag {
+  background: var(--tag-bg);
+  border: 1px solid var(--tag-border);
+  border-radius: 4px;
+  padding: 2px 9px;
+  font-size: 0.75rem;
+  color: var(--muted-light);
+  letter-spacing: 0.01em;
+}
+
+/* ── Carousel ─────────────────────────────────────── */
+
+.carousel {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 4px;
+}
+
+.carousel-image-wrap {
+  width: 100%;
+  height: 420px;
+  background: var(--carousel-bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.carousel-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  align-self: center;
+}
+
+.carousel-controls button {
+  background: transparent;
+  border: 1px solid var(--border-hover);
+  color: var(--muted-light);
+  border-radius: 6px;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: border-color 0.15s, color 0.15s;
+}
+
+.carousel-controls button:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.carousel-controls span {
+  color: var(--muted);
+  font-size: 0.8rem;
+  min-width: 36px;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ── Responsive ───────────────────────────────────── */
+
+@media (max-width: 600px) {
+  .page {
+    padding: 48px 16px 80px;
+  }
+
+  .site-header h1 {
+    font-size: 2rem;
+  }
+
+  .project-card {
+    padding: 22px;
+  }
+
+  .carousel-image-wrap {
+    height: 260px;
+  }
+}
