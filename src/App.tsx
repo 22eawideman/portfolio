@@ -1,5 +1,7 @@
 import { useState } from 'react'
 
+const base = import.meta.env.BASE_URL
+
 interface Link {
   href: string
   label: string
@@ -21,11 +23,11 @@ const projects: Project[] = [
       'Full-stack YouTube-like video streaming platform with resumable uploads (TUS, up to 4 GB), automated HLS transcoding (360p/720p/1080p) via AWS Batch + FFmpeg on EC2 Spot instances, Google OAuth, Redis/BullMQ job queues, and a Kubernetes deployment demo with HPA autoscaling validated against 500 concurrent virtual users via k6.',
     tech: ['Next.js', 'TypeScript', 'Node.js', 'Express', 'PostgreSQL', 'AWS S3', 'CloudFront', 'AWS Batch', 'Docker', 'Redis', 'BullMQ', 'Kubernetes'],
     images: [
-      '/images/streamlair/01.png',
-      '/images/streamlair/02.png',
-      '/images/streamlair/03.png',
-      '/images/streamlair/04.png',
-      '/images/streamlair/05.png',
+      `${base}images/streamlair/01.png`,
+      `${base}images/streamlair/02.png`,
+      `${base}images/streamlair/03.png`,
+      `${base}images/streamlair/04.png`,
+      `${base}images/streamlair/05.png`,
     ],
     links: [
       { href: 'https://streamlair.net', label: 'streamlair.net', external: true },
@@ -38,11 +40,11 @@ const projects: Project[] = [
       'Recommendation system built from scratch using only NumPy — no ML frameworks. Implements matrix factorization and an MLP with hand-written forward passes, backprop, and a sparse Adam optimizer using scatter-add gradient accumulation. Trained on MovieLens 1M with temporal leave-one-out splitting, achieving HR@10 of 0.667 and NDCG@10 of 0.402 — a 47% improvement over the popularity baseline.',
     tech: ['Python', 'NumPy', 'pandas', 'matplotlib'],
     images: [
-      '/images/recommendation/01.png',
-      '/images/recommendation/02.png',
-      '/images/recommendation/03.png',
-      '/images/recommendation/04.png',
-      '/images/recommendation/05.png',
+      `${base}images/recommendation/01.png`,
+      `${base}images/recommendation/02.png`,
+      `${base}images/recommendation/03.png`,
+      `${base}images/recommendation/04.png`,
+      `${base}images/recommendation/05.png`,
     ],
     links: [
       { href: 'https://github.com/22eawideman/RecommendationModel', label: 'GitHub', external: true },
@@ -54,8 +56,8 @@ const projects: Project[] = [
       'Transformer language model built from scratch in PyTorch. Implements multi-head self-attention, causal masking, positional encoding, and residual connections by hand — no HuggingFace. Trained on three Project Gutenberg novels (~5 MB) via Apple Silicon MPS, reaching a cross-entropy loss of ~1.25 at 50k steps.\n\nThe output demonstrates what a character-level model actually learns: it picks up on character-level statistics — which letters tend to follow which — so it produces text that looks like plausible English words ("Frince", "suddenstres", "cipounted"). These are invented but structurally convincing, because the model has learned patterns like common suffixes, consonant clusters, and vowel placement.\n\nHowever, coherent sentences are out of reach for a fundamental reason. The model\'s context window is 64 characters — roughly 10–15 words — and each token is a single character, so the model is spending most of its capacity just reconstructing word shapes rather than tracking meaning across a sentence. To produce grammatically coherent output you\'d need subword tokenization (e.g. BPE) so the same context window covers far more semantic content, a much larger model, and significantly more training.',
     tech: ['Python', 'PyTorch', 'Apple MPS'],
     images: [
-      '/images/genai/01.png',
-      '/images/genai/02.png',
+      `${base}images/genai/01.png`,
+      `${base}images/genai/02.png`,
     ],
     links: [
       { href: 'https://github.com/22eawideman/generativeAIModel', label: 'GitHub', external: true },
