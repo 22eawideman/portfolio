@@ -136,7 +136,7 @@ export default function App() {
           <span className="header-link-divider" />
           <a href="https://github.com/22eawideman" target="_blank" rel="noopener noreferrer" className="header-link">GitHub ↗</a>
           <span className="header-link-divider" />
-          <a href={`${import.meta.env.BASE_URL}Resume.pdf`} target="_blank" rel="noopener noreferrer" className="header-link resume-link">Resume ↗</a>
+          <a href={`${import.meta.env.BASE_URL}/images/Resume.pdf`} target="_blank" rel="noopener noreferrer" className="header-link resume-link">Resume ↗</a>
         </nav>
       </header>
       <main className="projects">
